@@ -24,6 +24,7 @@ class CategoryController extends Controller
         $this->render('category/edit');
     }
 
+
     public function behaviors()
     {
         return [
@@ -47,3 +48,11 @@ class CategoryController extends Controller
         ];
     }
 }
+
+    
+    public function edit1()
+    {
+        $this->render('category/edit1');
+    }
+}
+
