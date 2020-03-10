@@ -1,7 +1,9 @@
 <?php
 
+
 class Employees extends Model
 {
+
 	/*
 	Bazadagi malumotlrnin hammasini olib keladi
 	 */
@@ -15,6 +17,7 @@ class Employees extends Model
     /*
     Bazadan id bo'yicha olib chiqdi
      */
+
     public function getOnce($id)
     {
         $sql = 'select * from employees where employeeNumber=:id';
@@ -28,28 +31,42 @@ class Employees extends Model
     oldin qiymatlani berish kerak
      */
     public $name;
+
     public $lname;
     public $extension;
+
     public $email;
     public $officeCode;
     public $reportsTo;
+
     public $jobTitle;
+
     public $image;
 
+
     public function save(){
-		$ins = $this->db->prepare("INSERT INTO employees(lastName,firstName,extension,email,officeCode,reportsTo,jobTitle,image)
+
+		$ins = $this->db->prepare("INSERT INTO employees(lastName,firstName,extension,email,officeCode,re
+			portsTo,jobTitle,image)
 				VALUES (:lname, :name, :extension, :email, :officeCode, :reportsTo, :jobTitle, :img);");
 		$ins->bindValue(':lname', $this->lname);
 		$ins->bindValue(':name', $this->name);
+
 		$ins->bindValue(':extension', $this->extension);
+
+
 		$ins->bindValue(':email', $this->email);
 		$ins->bindValue(':officeCode', $this->officeCode);
+
 		$ins->bindValue(':reportsTo', $this->reportsTo);
 		$ins->bindValue(':jobTitle', $this->jobTitle);
+
 		$ins->bindValue(':img', $this->image);
 		try {
 			$ins->execute();
+
 			return $this->db->lastInsertId();
+
 		} catch (PDOException $e) {
 			echo "Insert yoq: ".$e->getMessage();
 		}
@@ -61,9 +78,11 @@ class Employees extends Model
 	public function query($value)
 	{
 		$st = $this->db->prepare($value);
+
 		try {
 	        $st->execute();
 	        return $st->fetchAll(PDO::FETCH_OBJ);
+	        
 		} catch (PDOException $e) {
 			echo "Hatolik: ".$e->getMessage();
 		}
@@ -86,8 +105,16 @@ class Employees extends Model
 			echo "Update yoq: ".$e->getMessage();
 		}
 	}
-	
 
-
+	public function getAllDb()
+	{
+		$st = $this->db->prepare($value);
+		try {
+	        $st->execute();
+	        return $st->fetchAll(PDO::FETCH_OBJ);
+		} catch (PDOException $e) {
+			echo "Hatolik: ".$e->getMessage();
+		}
+	}
 
 }
