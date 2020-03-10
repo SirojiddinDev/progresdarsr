@@ -20,4 +20,15 @@ class SiteController extends Controller
         echo "bu site edit";
         include 'views/layouts/footer.php';
     }
+    public function dev()
+    {
+    	echo "Salom";
+    }
+
+    public function delete()
+    {
+        include 'views/layouts/header.php';
+        echo "bu site delete";
+        include 'views/layouts/footer.php';
+    }
 }
