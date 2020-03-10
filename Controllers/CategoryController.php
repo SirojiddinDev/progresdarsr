@@ -18,4 +18,9 @@ class CategoryController extends Controller
     {
         $this->render('category/edit');
     }
+    
+    public function edit1()
+    {
+        $this->render('category/edit1');
+    }
 }
