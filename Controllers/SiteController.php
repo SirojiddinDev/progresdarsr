@@ -20,6 +20,10 @@ class SiteController extends Controller
         echo "bu site edit";
         include 'views/layouts/footer.php';
     }
+    public function dev()
+    {
+    	echo "Salom";
+    }
 
     public function delete()
     {
@@ -27,5 +31,4 @@ class SiteController extends Controller
         echo "bu site delete";
         include 'views/layouts/footer.php';
     }
-
 }
