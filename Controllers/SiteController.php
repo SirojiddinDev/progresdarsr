@@ -24,4 +24,11 @@ class SiteController extends Controller
     {
     	echo "Salom";
     }
+
+    public function delete()
+    {
+        include 'views/layouts/header.php';
+        echo "bu site delete";
+        include 'views/layouts/footer.php';
+    }
 }
