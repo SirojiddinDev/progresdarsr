@@ -10,4 +10,8 @@ class PersonController extends Controller
     {
         echo "bu personni edit funksiyasini ichi: ".$id;
     }
+    public function git()
+    {
+        echo "gitga Personga nimadir qo'shdim";
+    }
 }
