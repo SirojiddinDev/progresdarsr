@@ -86,7 +86,10 @@ class Employees extends Model
 			echo "Update yoq: ".$e->getMessage();
 		}
 	}
-	
+	public function save()
+	{
+		return true;
+	}
 
 
 
