@@ -4,7 +4,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $model = new Employees();
+ /* SAlikhovID*/       $model = new Employees();
 
         $this->render('category/index', $model->getAll());
     }
